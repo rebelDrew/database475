@@ -4,8 +4,16 @@ DROP TABLE IF EXISTS ClockIn, ClockOut, Departments, Members, Pro_members, Progr
 -- tables
 -- Table: ClockIn
 CREATE TABLE ClockIn (
+<<<<<<< HEAD
     in_id int NOT NULL AUTO_INCREMENT,
     recordDate date NOT NULL,
+||||||| merged common ancestors
+    in_id int NOT NULL,
+    date date NOT NULL,
+=======
+    in_id int NOT NULL,
+    recordDate date NOT NULL,
+>>>>>>> 12754076a823ccced0f71184fce6f2feba8dee0d
     in_time time NOT NULL,
     Staff_staff_id int NOT NULL,
     CONSTRAINT ClockIn_pk PRIMARY KEY (in_id)
