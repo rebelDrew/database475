@@ -1,5 +1,4 @@
--- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2019-03-28 22:54:51.075
+
 DROP TABLE IF EXISTS ClockIn;
 DROP TABLE IF EXISTS ClockOut;
 DROP TABLE IF EXISTS Departments;
