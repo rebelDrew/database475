@@ -1,5 +1,13 @@
 -- Created by Vertabelo (http://vertabelo.com)
 -- Last modification date: 2019-03-28 22:54:51.075
+ALTER TABLE ClockIn DROP FOREIGN KEY ClockIn_Staff;
+ALTER TABLE ClockOut DROP FOREIGN KEY ClockOut_ClockIn;
+ALTER TABLE Pro_members DROP FOREIGN KEY Pro_members_Members;
+ALTER TABLE Pro_members DROP FOREIGN KEY Pro_members_Programs;
+ALTER TABLE Programs DROP FOREIGN KEY Programs_Departments;
+ALTER TABLE Staff DROP FOREIGN KEY Staff_Departments;
+ALTER TABLE payment DROP FOREIGN KEY payment_Staff;
+
 DROP TABLE IF EXISTS ClockIn;
 DROP TABLE IF EXISTS ClockOut;
 DROP TABLE IF EXISTS Departments;
@@ -12,7 +20,7 @@ DROP TABLE IF EXISTS payment;
 -- Table: ClockIn
 CREATE TABLE ClockIn (
     in_id int NOT NULL PRIMARY KEY,
-    date date NOT NULL,
+    recordDate date NOT NULL,
     in_time time NOT NULL,
     Staff_staff_id int NOT NULL
 );
