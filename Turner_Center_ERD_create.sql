@@ -21,7 +21,7 @@ CREATE TABLE ClockOut (
 
 -- Table: Departments
 CREATE TABLE Departments (
-    depart_id int NOT NULL,
+    depart_id int NOT NULL AUTO_INCREMENT,
     name varchar(15) NOT NULL,
     type varchar(15) NOT NULL,
     email varchar(10) NOT NULL,
@@ -57,10 +57,10 @@ CREATE TABLE Programs (
 
 -- Table: Staff
 CREATE TABLE Staff (
-    staff_id int NOT NULL,
+    staff_id int NOT NULL AUTO_INCREMENT,
     FName varchar(15) NOT NULL,
     LName varchar(15) NOT NULL,
-    type int NOT NULL,
+    type varchar(15) NOT NULL,
     email varchar(20) NOT NULL,
     phone varchar(10) NOT NULL,
     Departments_depart_id int NOT NULL,
