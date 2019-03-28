@@ -106,3 +106,4 @@ ALTER TABLE payment ADD CONSTRAINT payment_Staff FOREIGN KEY payment_Staff (Staf
     REFERENCES Staff (staff_id);
 
 -- End of file.
+a
