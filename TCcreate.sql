@@ -1,10 +1,11 @@
-
+-- Created by Vertabelo (http://vertabelo.com)
+-- Last modification date: 2019-03-28 22:54:51.075
 DROP TABLE IF EXISTS ClockIn, ClockOut, Departments, Members, Pro_members, Programs, Staff, Payment;
 -- tables
 -- Table: ClockIn
 CREATE TABLE ClockIn (
-    in_id int NOT NULL AUTO_INCREMENT,
-    recordDate date NOT NULL,
+    in_id int NOT NULL,
+    date date NOT NULL,
     in_time time NOT NULL,
     Staff_staff_id int NOT NULL,
     CONSTRAINT ClockIn_pk PRIMARY KEY (in_id)
@@ -12,7 +13,7 @@ CREATE TABLE ClockIn (
 
 -- Table: ClockOut
 CREATE TABLE ClockOut (
-    out_id int NOT NULL AUTO_INCREMENT,
+    out_id int NOT NULL,
     ClockIn_in_id int NOT NULL,
     out_time time NOT NULL,
     CONSTRAINT ClockOut_pk PRIMARY KEY (out_id)
@@ -20,7 +21,7 @@ CREATE TABLE ClockOut (
 
 -- Table: Departments
 CREATE TABLE Departments (
-    depart_id int NOT NULL AUTO_INCREMENT,
+    depart_id int NOT NULL,
     name varchar(15) NOT NULL,
     type varchar(15) NOT NULL,
     email varchar(10) NOT NULL,
@@ -29,7 +30,7 @@ CREATE TABLE Departments (
 
 -- Table: Members
 CREATE TABLE Members (
-    mem_id int NOT NULL AUTO_INCREMENT,
+    mem_id int NOT NULL,
     FName int NOT NULL,
     LName int NOT NULL,
     type varchar(15) NOT NULL,
@@ -43,13 +44,13 @@ CREATE TABLE Members (
 CREATE TABLE Pro_members (
     Members_mem_id int NOT NULL,
     Programs_pro_id int NOT NULL,
-    experienceLevel varchar(10) NOT NULL
+    experienceLevel varchar(10) NOT NULL,
     CONSTRAINT Pro_members_pk PRIMARY KEY (Members_mem_id,Programs_pro_id)
 );
 
 -- Table: Programs
 CREATE TABLE Programs (
-    pro_id int NOT NULL AUTO_INCREMENT,
+    pro_id int NOT NULL,
     type varchar(15) NOT NULL,
     Departments_depart_id int NOT NULL,
     CONSTRAINT Programs_pk PRIMARY KEY (pro_id)
@@ -57,7 +58,7 @@ CREATE TABLE Programs (
 
 -- Table: Staff
 CREATE TABLE Staff (
-    staff_id int NOT NULL AUTO_INCREMENT,
+    staff_id int NOT NULL,
     FName varchar(15) NOT NULL,
     LName varchar(15) NOT NULL,
     type varchar(15) NOT NULL,
@@ -69,7 +70,7 @@ CREATE TABLE Staff (
 
 -- Table: payment
 CREATE TABLE payment (
-    pay_id int NOT NULL AUTO_INCREMENT,
+    pay_id int NOT NULL,
     pay_type varchar(10) NOT NULL,
     rate double(8,2) NOT NULL,
     Staff_staff_id int NOT NULL,
