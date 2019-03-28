@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS ClockIn, ClockOut, Departments, Members, Pro_members, Progr
 -- Table: ClockIn
 CREATE TABLE ClockIn (
     in_id int NOT NULL,
-    date date NOT NULL,
+    recordDate date NOT NULL,
     in_time time NOT NULL,
     Staff_staff_id int NOT NULL,
     CONSTRAINT ClockIn_pk PRIMARY KEY (in_id)
