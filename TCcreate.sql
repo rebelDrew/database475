@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS Members;
 DROP TABLE IF EXISTS Pro_members;
 DROP TABLE IF EXISTS Programs;
 DROP TABLE IF EXISTS Staff;
-DROP TABLE IF EXISTS Payment;
+DROP TABLE IF EXISTS payment;
 -- tables
 -- Table: ClockIn
 CREATE TABLE ClockIn (
