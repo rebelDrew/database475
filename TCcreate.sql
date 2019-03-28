@@ -1,6 +1,13 @@
 -- Created by Vertabelo (http://vertabelo.com)
 -- Last modification date: 2019-03-28 22:54:51.075
-DROP TABLE IF EXISTS ClockIn, ClockOut, Departments, Members, Pro_members, Programs, Staff, Payment;
+DROP TABLE IF EXISTS ClockIn;
+DROP TABLE IF EXISTS ClockOut;
+DROP TABLE IF EXISTS Departments;
+DROP TABLE IF EXISTS Members;
+DROP TABLE IF EXISTS Pro_members;
+DROP TABLE IF EXISTS Programs;
+DROP TABLE IF EXISTS Staff;
+DROP TABLE IF EXISTS Payment;
 -- tables
 -- Table: ClockIn
 CREATE TABLE ClockIn (
