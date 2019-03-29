@@ -1,4 +1,4 @@
-/*
+
 --query 1
 SELECT LName, Count(staff_id)
 FROM Staff
@@ -6,9 +6,6 @@ WHERE type = 'trainer'
 GROUP BY LName
 ORDER BY phone;
 
-
-SELECT type, GROUP_CONCAT(name ORDER BY name) From Departments;
-*/
 
 SELECT FName, LName, recordDate, TIMEDIFF(ClockOut.out_time, ClockIn.in_time) AS HoursMinSecWorked
 from Staff
