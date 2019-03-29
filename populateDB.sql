@@ -53,7 +53,7 @@ INSERT INTO Pro_members(Members_mem_id, Programs_pro_id, experienceLevel)
 values (2, 2, 'intermediate');
 
 INSERT INTO Pro_members(Members_mem_id, Programs_pro_id, experienceLevel)
-values (3, 2, 'intermediate');
+values (3, 2, 'expert');
 
 INSERT INTO Pro_members(Members_mem_id, Programs_pro_id, experienceLevel)
 values (3, 3, 'intermediate');
