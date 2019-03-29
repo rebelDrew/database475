@@ -19,7 +19,7 @@ DROP TABLE IF EXISTS payment;
 -- tables
 -- Table: ClockIn
 CREATE TABLE ClockIn (
-    in_id int NOT NULL PRIMARY KEY,
+    in_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     recordDate date NOT NULL,
     in_time time NOT NULL,
     Staff_staff_id int NOT NULL
@@ -27,14 +27,14 @@ CREATE TABLE ClockIn (
 
 -- Table: ClockOut
 CREATE TABLE ClockOut (
-    out_id int NOT NULL PRIMARY KEY,
+    out_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ClockIn_in_id int NOT NULL,
     out_time time NOT NULL
 );
 
 -- Table: Departments
 CREATE TABLE Departments (
-    depart_id int NOT NULL PRIMARY KEY,
+    depart_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name varchar(15) NOT NULL,
     type varchar(15) NOT NULL,
     email varchar(10) NOT NULL
@@ -42,7 +42,7 @@ CREATE TABLE Departments (
 
 -- Table: Members
 CREATE TABLE Members (
-    mem_id int NOT NULL PRIMARY KEY,
+    mem_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     FName int NOT NULL,
     LName int NOT NULL,
     type varchar(15) NOT NULL,
@@ -60,14 +60,14 @@ CREATE TABLE Pro_members (
 
 -- Table: Programs
 CREATE TABLE Programs (
-    pro_id int NOT NULL PRIMARY KEY,
+    pro_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     type varchar(15) NOT NULL,
     Departments_depart_id int NOT NULL
 );
 
 -- Table: Staff
 CREATE TABLE Staff (
-    staff_id int NOT NULL PRIMARY KEY,
+    staff_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     FName varchar(15) NOT NULL,
     LName varchar(15) NOT NULL,
     type varchar(15) NOT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE Staff (
 
 -- Table: payment
 CREATE TABLE payment (
-    pay_id int NOT NULL PRIMARY KEY,
+    pay_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     pay_type varchar(10) NOT NULL,
     rate double(8,2) NOT NULL,
     Staff_staff_id int NOT NULL
