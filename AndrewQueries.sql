@@ -1,12 +1,12 @@
 
 --query 1
-SELECT LName, Count(staff_id)
+SELECT LName, Count(staff_id) AS Count
 FROM Staff
 WHERE type = 'trainer'
 GROUP BY LName
 ORDER BY phone;
 
-
+--we discussed the issue with GROUP_CONCAT at office hours on friday
 SELECT FName, LName, recordDate, TIMEDIFF(ClockOut.out_time, ClockIn.in_time) AS HoursMinSecWorked
 from Staff
 left outer join ClockIn
