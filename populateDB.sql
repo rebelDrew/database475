@@ -2,10 +2,10 @@ INSERT INTO Departments(name, type, email)
 values ('Fitness', 'fitness', 'fitness@go.olemiss.edu');
 
 INSERT INTO Departments(name, type, email)
-values ('Aquatics', 'swimming', 'aquatics@go.olemiss.edu')
+values ('Aquatics', 'swimming', 'aquatics@go.olemiss.edu');
 
 INSERT INTO Departments(name, type, email)
-values ('ProfessionalStaff', 'directors', 'prostaff@go.olemiss.edu')
+values ('ProfessionalStaff', 'directors', 'prostaff@go.olemiss.edu');
 
 INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
 values ('Andrew', 'Wallace', 'trainer', 'anwalla3@go.olemiss.edu', '5803019511', 1);
