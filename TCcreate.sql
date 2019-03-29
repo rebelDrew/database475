@@ -61,7 +61,7 @@ CREATE TABLE Pro_members (
 -- Table: Programs
 CREATE TABLE Programs (
     pro_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    type varchar(15) NOT NULL,
+    program_type varchar(15) NOT NULL,
     Departments_depart_id int NOT NULL
 );
 
