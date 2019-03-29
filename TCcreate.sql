@@ -37,7 +37,7 @@ CREATE TABLE Departments (
     depart_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name varchar(15) NOT NULL,
     type varchar(15) NOT NULL,
-    email varchar(10) NOT NULL
+    email varchar(30) NOT NULL
 );
 
 -- Table: Members
@@ -112,5 +112,5 @@ ALTER TABLE Staff ADD CONSTRAINT Staff_Departments FOREIGN KEY Staff_Departments
 -- Reference: payment_Staff (table: payment)
 ALTER TABLE payment ADD CONSTRAINT payment_Staff FOREIGN KEY payment_Staff (Staff_staff_id)
     REFERENCES Staff (staff_id);
---
+
 -- -- End of file.

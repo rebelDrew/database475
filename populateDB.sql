@@ -28,13 +28,13 @@ values ('Group Fitness', 1);
 INSERT INTO Programs(type, Departments_depart_id)
 values ('Swim Class', 2);
 
-INSERT INTO Members(FNAme, LName, type, cost, DOB, email)
+INSERT INTO Members(FName, LName, type, cost, DOB, email)
 values ('Joshua', 'Williamson', 'student', 0.00, 'joshwil32@go.olemiss.edu');
 
-INSERT INTO Members(FNAme, LName, type, cost, DOB, email)
+INSERT INTO Members(FaAme, LName, type, cost, DOB, email)
 values ('John', 'Doe', 'student', 0.00, 'joedoe1@go.olemiss.edu');
 
-INSERT INTO Members(FNAme, LName, type, cost, DOB, email)
+INSERT INTO Members(FName, LName, type, cost, DOB, email)
 values ('Yixin', 'Chen', 'faculty', 50.00, 'yixchen@go.olemiss.edu');
 
 INSERT INTO Pro_members(Members_mem_id, Programs_pro_id, experienceLevel)
