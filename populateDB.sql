@@ -14,10 +14,10 @@ INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
 values ('Austin', 'Wallace', 'trainer', 'amwalla3@go.olemiss.edu', '5803019401', 1);
 
 INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
-values ('Andrew', 'Winand', 'trainer', 'anwin3@go.olemiss.edu', '6623019511', 1);
+values ('Alexander', 'Winand', 'trainer', 'alwin3@go.olemiss.edu', '6623019511', 1);
 
 INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
-values ('Austin', 'Winand', 'trainer', 'amwin3@go.olemiss.edu', '6623019401', 1);
+values ('David', 'Winand', 'trainer', 'davwin3@go.olemiss.edu', '6623019401', 1);
 
 INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
 values ('Jacob', 'Winand', 'trainer', 'jacwin2@go.olemiss.edu', '9019212333', 1);
@@ -69,13 +69,13 @@ INSERT INTO ClockOut(ClockIn_in_id, out_time)
 values (1, "09:45:15");
 
 INSERT INTO ClockIn(recordDate, in_time, Staff_staff_id)
-values ('2019-3-16', '12:15:30', 1);
+values ('2019-3-16', '12:15:30', 2);
 
 INSERT INTO ClockOut(ClockIn_in_id, out_time)
 values (2, "14:15:00");
 
 INSERT INTO ClockIn(recordDate, in_time, Staff_staff_id)
-values ('2019-3-19', '08:15:30', 2);
+values ('2019-3-19', '08:15:30', 3);
 
 INSERT INTO ClockOut(ClockIn_in_id, out_time)
 values (3, "14:55:34");
