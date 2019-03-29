@@ -53,9 +53,10 @@ CREATE TABLE Members (
 
 -- Table: Pro_members
 CREATE TABLE Pro_members (
-    Members_mem_id int NOT NULL PRIMARY KEY,
+    Members_mem_id int NOT NULL,
     Programs_pro_id int NOT NULL,
-    experienceLevel varchar(10) NOT NULL
+    experienceLevel varchar(10) NOT NULL,
+    PRIMARY KEY(Members_mem_id, Programs_pro_id)
 );
 
 -- Table: Programs

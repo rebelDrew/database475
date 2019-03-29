@@ -56,7 +56,7 @@ INSERT INTO Pro_members(Members_mem_id, Programs_pro_id, experienceLevel)
 values (3, 2, 'expert');
 
 INSERT INTO Pro_members(Members_mem_id, Programs_pro_id, experienceLevel)
-values (3, 3, 'intermediate');
+values (2, 3, 'intermediate');
 
 INSERT INTO payment(pay_type, rate, Staff_staff_id)
 values ('card', 25, 1);
