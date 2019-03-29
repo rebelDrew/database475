@@ -43,8 +43,8 @@ CREATE TABLE Departments (
 -- Table: Members
 CREATE TABLE Members (
     mem_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    FName int NOT NULL,
-    LName int NOT NULL,
+    FName varchar(20) NOT NULL,
+    LName varchar(20) NOT NULL,
     type varchar(15) NOT NULL,
     cost double(8,2) NOT NULL,
     DOB date NOT NULL,
