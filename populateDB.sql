@@ -1,31 +1,31 @@
-INSERT INTO Departments(name, type, email)
+INSERT INTO Departments(name, department_type, email)
 values ('Fitness', 'fitness', 'fitness@go.olemiss.edu');
 
-INSERT INTO Departments(name, type, email)
+INSERT INTO Departments(name, department_type, email)
 values ('Aquatics', 'swimming', 'aquatics@go.olemiss.edu');
 
-INSERT INTO Departments(name, type, email)
+INSERT INTO Departments(name, department_type, email)
 values ('ProfessionalStaff', 'directors', 'prostaff@go.olemiss.edu');
 
-INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
+INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('Andrew', 'Wallace', 'trainer', 'anwalla3@go.olemiss.edu', '5803019511', 1);
 
-INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
+INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('Austin', 'Wallace', 'trainer', 'amwalla3@go.olemiss.edu', '5803019401', 1);
 
-INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
+INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('Andrew', 'Winand', 'trainer', 'anwin3@go.olemiss.edu', '6623019511', 1);
 
-INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
+INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('Austin', 'Winand', 'trainer', 'amwin3@go.olemiss.edu', '6623019401', 1);
 
-INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
+INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('Jacob', 'Winand', 'trainer', 'jacwin2@go.olemiss.edu', '9019212333', 1);
 
-INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
+INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('Joey', 'Ele', 'lifeguard', 'joeEle4@go.olemiss.edu', '90139281111', 2);
 
-INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
+INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('Jeff', 'Lucas', 'Directory', 'jeffLuc2@go.olemiss.edu', '6623918821', 3);
 
 INSERT INTO Programs(program_type, Departments_depart_id)
@@ -37,13 +37,13 @@ values ('Group Fitness', 1);
 INSERT INTO Programs(program_type, Departments_depart_id)
 values ('Swim Class', 2);
 
-INSERT INTO Members(FName, LName, type, cost, DOB, email)
+INSERT INTO Members(FName, LName, member_type, cost, DOB, email)
 values ('Joshua', 'Williamson', 'student', 0.00, 11/21/1992, 'joshwil32@go.olemiss.edu');
 
-INSERT INTO Members(FName, LName, type, cost, DOB, email)
+INSERT INTO Members(FName, LName, member_type, cost, DOB, email)
 values ('John', 'Doe', 'student', 0.00, 01/31/1998, 'joedoe1@go.olemiss.edu');
 
-INSERT INTO Members(FName, LName, type, cost, DOB, email)
+INSERT INTO Members(FName, LName, member_type, cost, DOB, email)
 values ('Yixin', 'Chen', 'faculty', 50.00, 10/31/1982, 'yixchen@go.olemiss.edu');
 
 INSERT INTO Pro_members(Members_mem_id, Programs_pro_id, experienceLevel)

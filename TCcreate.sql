@@ -36,7 +36,7 @@ CREATE TABLE ClockOut (
 CREATE TABLE Departments (
     depart_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name varchar(15) NOT NULL,
-    type varchar(15) NOT NULL,
+    department_type varchar(15) NOT NULL,
     email varchar(30) NOT NULL
 );
 
@@ -45,7 +45,7 @@ CREATE TABLE Members (
     mem_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     FName varchar(20) NOT NULL,
     LName varchar(20) NOT NULL,
-    type varchar(15) NOT NULL,
+    member_type varchar(15) NOT NULL,
     cost double(8,2) NOT NULL,
     DOB date NOT NULL,
     email varchar(20) NOT NULL
@@ -70,7 +70,7 @@ CREATE TABLE Staff (
     staff_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     FName varchar(15) NOT NULL,
     LName varchar(15) NOT NULL,
-    type varchar(15) NOT NULL,
+    staff_type varchar(15) NOT NULL,
     email varchar(20) NOT NULL,
     phone varchar(10) NOT NULL,
     Departments_depart_id int NOT NULL
