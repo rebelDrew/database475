@@ -84,7 +84,7 @@ if (($output = message()) !== null) {
 
 <?php
 //Define footer with the phrase "Who's Who"
-	new_footer("Who's Who");
+	new_footer("David Rodriguez");
 
 //Release query results
 	//$stmt -> close();

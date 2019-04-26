@@ -25,7 +25,7 @@ if ($stmt) {
     echo "<h2>Current Staff</h2>";
     echo "<table>";
     echo "  <thead>";
-    echo "    <tr><th>Department Name</th><th>Staff Name</th><th></th><th></th></tr>";
+    echo "    <tr><th>Department Name</th><th>Staff Name</th><th></th><th></th><th></th></tr>";
     echo "  </thead>";
     echo "  <tbody>";
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -37,8 +37,9 @@ if ($stmt) {
         //Create an Edit and Delete link
         //Edit should direct to editPeople.php, sending PersonID in URL
         //Delete should direct to deletePeople.php, sending PersonID in URL - include onclick to confirm delete
-        echo "<td><a href='editDepartments.php?id=".urlencode($row['depart_id'])."'>Edit</a></td>";
-        echo "<td><a href='deleteDepartments.php?id=".urlencode($row['depart_id'])."' onclick='return confirm('Are you sure you want to delete?');'>Delete</a></td>";
+        echo "<td><a href='editDepartments.php?id=".urlencode($row['depart_id'])."'>Edit Department</a></td>";
+        echo "<td><a href='editStaff.php?id=".urlencode($row['depart_id'])."'>Edit Staff</a></td>";
+        echo "<td><a href='deleteDepartments.php?id=".urlencode($row['depart_id'])."' onclick='return confirm('Are you sure you want to delete?');'>Delete department</a></td>";
         echo "</tr>";
     }
     echo "  </tbody>";
