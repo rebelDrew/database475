@@ -38,8 +38,8 @@ if (isset($_GET["id"]) && $_GET["id"] !== "") {
           //Create an Edit and Delete link
           //Edit should direct to editPeople.php, sending PersonID in URL
           //Delete should direct to deletePeople.php, sending PersonID in URL - include onclick to confirm delete
-          echo "<td><a href='editStaff.php?staff_id=".urlencode($row['staff_id'])."'>Edit Staff</a></td>";
-          echo "<td><a href='deleteStaff.php?staff_id=".urlencode($row['staff_id'])."' onclick='return confirm('Are you sure you want to delete?');'>Delete staff</a></td>";
+          echo "<td><a href='editStaff.php?id=".urlencode($row['staff_id'])."&depart=".urlencode($_GET["id"])."'>Edit Staff</a></td>";
+          echo "<td><a href='deleteStaff.php?id=".urlencode($row['staff_id'])."&depart=".urlencode($_GET["id"])."' onclick='return confirm('Are you sure you want to delete?');'>Delete staff</a></td>";
           echo "</tr>";
       }
       echo "  </tbody>";
