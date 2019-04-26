@@ -20,7 +20,7 @@ if (($output = message()) !== null) {
 	echo "<label for='left-label' class='left inline'>";
 if (isset($_GET["depart_id"]) && $_GET["depart_id"] !== "") {
 	if (isset($_POST["submit"])) {
-		if( (isset($_POST["FName"]) && $_POST["FName"] !== "") && (isset($_POST["LName"]) && $_POST["LName"] !== "") &&(isset($_POST["type"]) && $_POST["type"] !== "") &&(isset($_POST["email"]) && $_POST["email"] !== "") &&(isset($_POST["phone"]) && $_POST["BirthState"] !== "")){
+    if( (isset($_POST["FName"]) && $_POST["FName"] !== "") && (isset($_POST["LName"]) && $_POST["LName"] !== "") &&(isset($_POST["type"]) && $_POST["type"] !== "") && (isset($_POST["email"]) && $_POST["email"] !== "") && (isset($_POST["phone"]) && $_POST["phone"] !== "") && (isset($_POST["name"]) && $_POST["name"] !== "")) {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 					//STEP 2.
 					//Create and prepare query to insert information that has been posted
@@ -28,7 +28,7 @@ if (isset($_GET["depart_id"]) && $_GET["depart_id"] !== "") {
 
 					// Execute query
 			$stmt = $mysqli -> prepare($query);
-			$stmt -> execute([$_POST["FName"], $_POST["LName"], $_POST["type"], $_POST["email"], $_POST["phone"], $_GET["depart_id"]]);
+			$stmt -> execute([$_POST["FName"], $_POST["LName"], $_POST["type"], $_POST["email"], $_POST["phone"], $_POST["name"]]);
 
 					//Verify $stmt executed - create a SESSION message
 			if($stmt){
@@ -49,7 +49,11 @@ if (isset($_GET["depart_id"]) && $_GET["depart_id"] !== "") {
 }
 	else {
 //////////////////////////////////////////////////////////////////////////////////////////////////
-		// STEP 1.  Create a form that will post to this page: createPeople.php
+
+    $stmt = $mysqli -> prepare("SELECT * FROM Departments");
+    $stmt -> execute();
+
+    // STEP 1.  Create a form that will post to this page: createPeople.php
 		echo '<form method="POST" action="createStaff.php">';
 
 		//Include <input> tags for each of the attributes in person:
@@ -59,7 +63,11 @@ if (isset($_GET["depart_id"]) && $_GET["depart_id"] !== "") {
 		echo '<p>Type: <br><input type="text" name="type"></p>';
 		echo '<p>Email: <br><input type="text" name="email"></p>';
 		echo '<p>Phone: <br><input type="text" name="phone"></p>';
-//		echo '<p>Department <br><input type="text" name="Departments_depart_id"></p>';
+    echo '<p>Department: <br><select name="name"></p>';
+    echo '<option></option>';
+    while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+      echo "<option value = '".$row['name']."'>".$row['name']."</option>";    }
+    echo'</select><p />';
 
 		//Finally, add a submit button - include the class 'tiny round button'
 		echo '<input type="submit" name="submit" class="button tiny round" value="Add a person" />';
