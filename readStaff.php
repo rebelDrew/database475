@@ -13,7 +13,7 @@ if (($output = message()) !== null) {
 
 //****************  Add Query
 //  Query people to select PersonID, FirstName, and LastName, sorting in ascending order by LastName
-$query = "SELECT staff_id, Departments.name, GROUP_CONCAT(CONCAT(FName, ' ', LName) SEPARATOR ', ') AS fullName FROM Staff left outer join Departments on Staff.Departments_depart_id = Departments.depart_id GROUP BY Departments.name";
+$query = "SELECT depart_id, Departments.name, GROUP_CONCAT(CONCAT(FName, ' ', LName) SEPARATOR ', ') AS fullName FROM Staff left outer join Departments on Staff.Departments_depart_id = Departments.depart_id GROUP BY Departments.name";
 
 //  Prepare and execute query
 $stmt = $mysqli -> prepare($query);
@@ -37,8 +37,8 @@ if ($stmt) {
         //Create an Edit and Delete link
         //Edit should direct to editPeople.php, sending PersonID in URL
         //Delete should direct to deletePeople.php, sending PersonID in URL - include onclick to confirm delete
-        echo "<td><a href='editStaff.php?staff_id=".urlencode($row['staff_id'])."'>Edit</a></td>";
-        echo "<td><a href='deleteStaff.php?staff_id=".urlencode($row['staff_id'])."' onclick='return confirm('Are you sure you want to delete?');'>Delete</a></td>";
+        echo "<td><a href='editDepartments.php?id=".urlencode($row['depart_id'])."'>Edit</a></td>";
+        echo "<td><a href='deleteDepartments.php?id=".urlencode($row['depart_id'])."' onclick='return confirm('Are you sure you want to delete?');'>Delete</a></td>";
         echo "</tr>";
     }
     echo "  </tbody>";

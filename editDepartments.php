@@ -32,16 +32,19 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	else {
 
 	  if (isset($_GET["id"]) && $_GET["id"] !== "") {
-	  //Prepare and execute a query to SELECT * using GET id in criterion - WHERE PersonID = ?
+		//Prepare and execute a query to SELECT * using GET id in criterion - WHERE PersonID = ?
+		
+		$ID = $_GET["id"];
 		$query = "SELECT * FROM Departments WHERE depart_id = ?";
 		$stmt = $mysqli->prepare($query);
-		$stmt->execute($_GET['id']);
+		$stmt->execute([$_GET['id']]);
 
-
+		//echo "buddy";
 
 		//Verify statement successfully executed - I assume that results are returned to variable $stmt
 		if ($stmt)  {
 			//Fetch associative array from executed prepared statement
+			//echo "yeah";
 			while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			//Output whose profile we are updating
 			//UNCOMMENT ONCE YOU'VE COMPLETED THE FILE
@@ -50,7 +53,7 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			echo "<input type='hidden' name='id' value='{$ID}' method='POST'/>";
 			echo "<label>Name</label><input type='text' value='{$row['name']}' name='name' method='POST'>";
 			echo "<label>Department Type</label><input type='text' value='{$row['department_type']}' name='department_type' method='POST'>";
-			echo "<label>Email</label><input type='text' value='{$row['email']}' name='Birthdate' method='POST'>";
+			echo "<label>Email</label><input type='text' value='{$row['email']}' name='email' method='POST'>";
 			echo "<button type='submit' name='submit'>Submit</button>";
 			echo "</form>";
 
@@ -69,11 +72,11 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 
     }
-
+	}
 //Define footer with the phrase "Who's Who"
 //Release query results
 //Close database
 new_footer("Andrew Wallace");
-$stmt -> close();
+//$stmt -> close();
 Database::dbDisconnect();
 ?>

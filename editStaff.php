@@ -40,11 +40,11 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	else {
 ///////////////////////////////////////////////////////////////////////////////////////////
 	  //Step 1.
-	  if (isset($_GET["id"]) && $_GET["id"] !== "") {
-	  //Prepare and execute a query to SELECT * using GET id in criterion - WHERE PersonID = ?
+	  if (isset($_GET['staff_id']) && $_GET['staff_id'] !== "") {
+	  $ID = $_GET['staff_id'];
 		$query = "SELECT * FROM Staff WHERE staff_id = ?";
 		$stmt = $mysqli->prepare($query);
-		$stmt->execute($_GET['id']);
+		$stmt->execute($_GET['staff_id']);
 
 
 
@@ -74,18 +74,18 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		}
 	}
-		//Query failed. Return to readPeople.php and output error
 		else {
 			$_SESSION["message"] = "Person could not be found!";
 			redirect("readStaff.php");
 		}
 
-    }
+		}
+	}
 
 //Define footer with the phrase "Who's Who"
 //Release query results
 //Close database
 new_footer("Andrew Wallace");
-$stmt -> close();
+//$stmt -> close();
 Database::dbDisconnect();
 ?>

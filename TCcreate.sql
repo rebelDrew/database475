@@ -88,30 +88,30 @@ CREATE TABLE payment (
 -- -- foreign keys
 -- Reference: ClockIn_Staff (table: ClockIn)
 ALTER TABLE ClockIn ADD CONSTRAINT ClockIn_Staff FOREIGN KEY ClockIn_Staff (Staff_staff_id)
-    REFERENCES Staff (staff_id);
+    REFERENCES Staff (staff_id) ON DELETE CASCADE;
 
 -- Reference: ClockOut_ClockIn (table: ClockOut)
 ALTER TABLE ClockOut ADD CONSTRAINT ClockOut_ClockIn FOREIGN KEY ClockOut_ClockIn (ClockIn_in_id)
-    REFERENCES ClockIn (in_id);
+    REFERENCES ClockIn (in_id) ON DELETE CASCADE;
 
 -- Reference: Pro_members_Members (table: Pro_members)
 ALTER TABLE Pro_members ADD CONSTRAINT Pro_members_Members FOREIGN KEY Pro_members_Members (Members_mem_id)
-    REFERENCES Members (mem_id);
+    REFERENCES Members (mem_id) ON DELETE CASCADE;
 
 -- Reference: Pro_members_Programs (table: Pro_members)
 ALTER TABLE Pro_members ADD CONSTRAINT Pro_members_Programs FOREIGN KEY Pro_members_Programs (Programs_pro_id)
-    REFERENCES Programs (pro_id);
+    REFERENCES Programs (pro_id) ON DELETE CASCADE;
 
 -- Reference: Programs_Departments (table: Programs)
 ALTER TABLE Programs ADD CONSTRAINT Programs_Departments FOREIGN KEY Programs_Departments (Departments_depart_id)
-    REFERENCES Departments (depart_id);
+    REFERENCES Departments (depart_id) ON DELETE CASCADE;
 
 -- Reference: Staff_Departments (table: Staff)
 ALTER TABLE Staff ADD CONSTRAINT Staff_Departments FOREIGN KEY Staff_Departments (Departments_depart_id)
-    REFERENCES Departments (depart_id);
+    REFERENCES Departments (depart_id) ON DELETE CASCADE;
 
 -- Reference: payment_Staff (table: payment)
 ALTER TABLE payment ADD CONSTRAINT payment_Staff FOREIGN KEY payment_Staff (Staff_staff_id)
-    REFERENCES Staff (staff_id);
+    REFERENCES Staff (staff_id) ON DELETE CASCADE;
 
 -- -- End of file.
