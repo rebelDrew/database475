@@ -35,7 +35,7 @@ if (($output = message()) !== null) {
 				$_SESSION["message"] =  $_POST['departmentName']." has been added!";
 			}
 					//Redirect back to readPeople.php
-			redirect("readDepartments.php");
+			redirect("readStaff.php");
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,7 +66,7 @@ if (($output = message()) !== null) {
 	}
 	echo "</label>";
 	echo "</div>";
-	echo "<br /><p>&laquo:<a href='readDepartments.php'>Back to Main Page</a>";
+	echo "<br /><p>&laquo:<a href='readStaff.php'>Back to Main Page</a>";
 	?>
 
 
