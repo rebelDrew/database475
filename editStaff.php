@@ -20,9 +20,9 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ///////////////////////////////////////////////////////////////////////////////////////////
 		//Step 2.
 		//Create an UPDATE query using anonymous parameters and the criterion WHERE PersonID = ?
-		$query = "UPDATE Staff SET FName = ?, LName = ?, staff_type = ?, email = ?, phone = ? WHERE staff_id = ?";
+		$query = "UPDATE Staff SET FName = ?, LName = ?, staff_type = ?, email = ?, phone = ?, Departments_depart_id=? WHERE staff_id = ?";
 		$stmt = $mysqli->prepare($query);
-		$stmt->execute([$_POST['FName'],$_POST['LName'],$_POST['staff_type'],$_POST['email'],$_POST['phone']]);
+		$stmt->execute([$_POST['FName'],$_POST['LName'],$_POST['staff_type'],$_POST['email'],$_POST['phone'], $_POST['name'], $_POST['staff_id']]);
 
 
 
@@ -44,32 +44,40 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	  $ID = $_GET['staff_id'];
 		$query = "SELECT * FROM Staff WHERE staff_id = ?";
 		$stmt = $mysqli->prepare($query);
-		$stmt->execute($_GET['staff_id']);
+		$stmt->execute([$_GET['staff_id']]);
 
-
+		$query2 = "SELECT * FROM Departments";
+		$stmt2 = $mysqli->prepare($query2);
+		$stmt2->execute();
 
 		//Verify statement successfully executed - I assume that results are returned to variable $stmt
 		if ($stmt)  {
 			//Fetch associative array from executed prepared statement
 			while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-			//Output whose profile we are updating
-			//UNCOMMENT ONCE YOU'VE COMPLETED THE FILE
-			echo "<h3>".$row["FirstName"]." ".$row["LastName"]."'s Profile</h3>";
-			echo "<form method='POST' action='./editStaff.php'>";
-			echo "<input type='hidden' name='staff_id' value='{$ID}' method='POST'/>";
-			echo "<label>First Name</label><input type='text' value='{$row['FName']}' name='FName' method='POST'>";
-			echo "<label>Last Name</label><input type='text' value='{$row['LName']}' name='LName' method='POST'>";
-			echo "<label>Type</label><input type='text' value='{$row['staff_type']}' name='staff_type' method='POST'>";
-			echo "<label>Email</label><input type='text' value='{$row['email']}' name='email' method='POST'>";
-			echo "<label>Phone</label><input type='text' value='{$row['phone']}' name='phone' method='POST'>";
-			echo "<button type='submit' name='submit'>Submit</button>";
-			echo "</form>";
+				//Output whose profile we are updating
+				//UNCOMMENT ONCE YOU'VE COMPLETED THE FILE
+				echo "<h3>".$row["FName"]." ".$row["LName"]."'s Profile</h3>";
+				echo "<form method='POST' action='./editStaff.php'>";
+				echo "<input type='hidden' name='staff_id' value='{$ID}' method='POST'/>";
+				echo "<label>First Name</label><input type='text' value='{$row['FName']}' name='FName' method='POST'>";
+				echo "<label>Last Name</label><input type='text' value='{$row['LName']}' name='LName' method='POST'>";
+				echo "<label>Type</label><input type='text' value='{$row['staff_type']}' name='staff_type' method='POST'>";
+				echo "<label>Email</label><input type='text' value='{$row['email']}' name='email' method='POST'>";
+				echo "<label>Phone</label><input type='text' value='{$row['phone']}' name='phone' method='POST'>";
+				echo '<p>Department: <br><select name="name"></p>';
+				echo '<option></option>';
+				while ($row2 = $stmt2 -> fetch(PDO::FETCH_ASSOC)){
+				echo "<option value = '".$row2['depart_id']."'>".$row2['name']."</option>";
+				}
+				echo'</select><p />';
+				echo "<button type='submit' name='submit'>Submit</button>";
+				echo "</form>";
 
-	
 
-			echo "<br /><p>&laquo:<a href='readStaff.php'>Back to Main Page</a>";
-			echo "</label>";
-			echo "</div>";
+
+				echo "<br /><p>&laquo:<a href='readStaff.php'>Back to Main Page</a>";
+				echo "</label>";
+				echo "</div>";
 
 
 		}
