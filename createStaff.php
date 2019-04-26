@@ -66,7 +66,7 @@ if (isset($_GET["depart_id"]) && $_GET["depart_id"] !== "") {
     echo '<p>Department: <br><select name="name"></p>';
     echo '<option></option>';
     while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
-      echo "<option value = '".$row['name']."'>".$row['name']."</option>";    }
+      echo "<option value = '".$row['id']."'>".$row['name']."</option>";    }
     echo'</select><p />';
 
 		//Finally, add a submit button - include the class 'tiny round button'

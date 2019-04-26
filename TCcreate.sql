@@ -35,7 +35,7 @@ CREATE TABLE ClockOut (
 -- Table: Departments
 CREATE TABLE Departments (
     depart_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name varchar(15) NOT NULL,
+    name varchar(30) NOT NULL,
     department_type varchar(15) NOT NULL,
     email varchar(30) NOT NULL
 );
