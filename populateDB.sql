@@ -13,10 +13,10 @@ values ('Andrew', 'Wallace', 'trainer', 'anwalla3@go.olemiss.edu', '5803019511',
 INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('Austin', 'Wallace', 'trainer', 'amwalla3@go.olemiss.edu', '5803019401', 1);
 
-INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
+INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('Alexander', 'Winand', 'trainer', 'alwin3@go.olemiss.edu', '6623019511', 1);
 
-INSERT INTO Staff(FName, LName, type, email, phone, Departments_depart_id)
+INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
 values ('David', 'Winand', 'trainer', 'davwin3@go.olemiss.edu', '6623019401', 1);
 
 INSERT INTO Staff(FName, LName, staff_type, email, phone, Departments_depart_id)
