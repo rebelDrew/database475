@@ -22,7 +22,7 @@ $stmt -> execute();
 if ($stmt) {
     echo "<div class='row'>";
     echo "<center>";
-    echo "<h2>Current Staff</h2>";
+    echo "<h2>Current Staff by Department</h2>";
     echo "<table>";
     echo "  <thead>";
     echo "    <tr><th>Department Name</th><th>Staff Name</th><th></th><th></th><th></th></tr>";

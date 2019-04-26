@@ -18,7 +18,7 @@ if (($output = message()) !== null) {
 	echo "<h3>Add an employee.</h3>";
 	echo "<div class='row'>";
 	echo "<label for='left-label' class='left inline'>";
-// if (isset($_GET["id"]) && $_GET["id"] !== "") {
+  
 	if (isset($_POST["submit"])) {
     if( (isset($_POST["FName"]) && $_POST["FName"] !== "") && (isset($_POST["LName"]) && $_POST["LName"] !== "") &&(isset($_POST["type"]) && $_POST["type"] !== "") && (isset($_POST["email"]) && $_POST["email"] !== "") && (isset($_POST["phone"]) && $_POST["phone"] !== "") && (isset($_POST["name"]) && $_POST["name"] !== "")) {
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,7 +46,6 @@ if (($output = message()) !== null) {
 				redirect("createStaff.php");
 		}
 	}
-// }
 	else {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,7 +65,8 @@ if (($output = message()) !== null) {
     echo '<p>Department: <br><select name="name"></p>';
     echo '<option></option>';
     while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
-      echo "<option value = '".$row['depart_id']."'>".$row['name']."</option>";    }
+      echo "<option value = '".$row['depart_id']."'>".$row['name']."</option>";
+    }
     echo'</select><p />';
 
 		//Finally, add a submit button - include the class 'tiny round button'
@@ -78,7 +78,7 @@ if (($output = message()) !== null) {
 	}
 	echo "</label>";
 	echo "</div>";
-	echo "<br /><p>&laquo:<a href='readDepartments.php'>Back to Main Page</a>";
+	echo "<br /><p>&laquo:<a href='readStaff.php'>Back to Main Page</a>";
 	?>
 
 
