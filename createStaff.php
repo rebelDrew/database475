@@ -18,7 +18,7 @@ if (($output = message()) !== null) {
 	echo "<h3>Add an employee.</h3>";
 	echo "<div class='row'>";
 	echo "<label for='left-label' class='left inline'>";
-// if (isset($_GET["id"]) && $_GET["id"] !== "") {
+ if (isset($_GET["id"]) && $_GET["id"] !== "") {
 	if (isset($_POST["submit"])) {
     if( (isset($_POST["FName"]) && $_POST["FName"] !== "") && (isset($_POST["LName"]) && $_POST["LName"] !== "") &&(isset($_POST["type"]) && $_POST["type"] !== "") && (isset($_POST["email"]) && $_POST["email"] !== "") && (isset($_POST["phone"]) && $_POST["phone"] !== "") && (isset($_POST["name"]) && $_POST["name"] !== "")) {
 //////////////////////////////////////////////////////////////////////////////////////////////////
