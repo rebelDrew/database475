@@ -46,10 +46,6 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$stmt = $mysqli->prepare($query);
 		$stmt->execute([$_GET['staff_id']]);
 
-		$query2 = "SELECT * FROM Departments";
-		$stmt2 = $mysqli->prepare($query2);
-		$stmt2->execute();
-
 		//Verify statement successfully executed - I assume that results are returned to variable $stmt
 		if ($stmt)  {
 			//Fetch associative array from executed prepared statement
@@ -66,8 +62,16 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				echo "<label>Phone</label><input type='text' value='{$row['phone']}' name='phone' method='POST'>";
 				echo '<p>Department: <br><select name="name"></p>';
 				echo '<option></option>';
+				$query2 = "SELECT * FROM Departments";
+				$stmt2 = $mysqli->prepare($query2);
+				$stmt2->execute();
 				while ($row2 = $stmt2 -> fetch(PDO::FETCH_ASSOC)){
-				echo "<option value = '".$row2['depart_id']."'>".$row2['name']."</option>";
+					if($row['Departments_depart_id'] == $row2['depart_id']){
+						echo "<option value = '".$row['Departments_depart_id']."' selected>".$row2['name']."</option>";
+					}
+					else {
+						echo "<option value = '".$row2['depart_id']."'>".$row2['name']."</option>";
+					}
 				}
 				echo'</select><p />';
 				echo "<button type='submit' name='submit'>Submit</button>";
