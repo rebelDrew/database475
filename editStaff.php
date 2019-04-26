@@ -61,7 +61,6 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				echo "<label>Email</label><input type='text' value='{$row['email']}' name='email' method='POST'>";
 				echo "<label>Phone</label><input type='text' value='{$row['phone']}' name='phone' method='POST'>";
 				echo '<p>Department: <br><select name="name"></p>';
-				echo '<option></option>';
 				$query2 = "SELECT * FROM Departments";
 				$stmt2 = $mysqli->prepare($query2);
 				$stmt2->execute();
