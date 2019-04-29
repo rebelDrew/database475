@@ -13,7 +13,7 @@ if (($output = message()) !== null) {
 
 //****************  Add Query
 //  Query people to select PersonID, FirstName, and LastName, sorting in ascending order by LastName
-$query = "SELECT depart_id, Departments.name, GROUP_CONCAT(CONCAT(FName, ' ', LName) SEPARATOR ', ') AS fullName FROM Staff left outer join Departments on Staff.Departments_depart_id = Departments.depart_id GROUP BY Departments.name";
+$query = "SELECT depart_id, Departments.name, GROUP_CONCAT(CONCAT(FName, ' ', LName) SEPARATOR ', ') AS fullName FROM Staff right outer join Departments on Staff.Departments_depart_id = Departments.depart_id GROUP BY Departments.name";
 
 //  Prepare and execute query
 $stmt = $mysqli -> prepare($query);

@@ -67,6 +67,15 @@ values ('cash', 10.50, 2);
 INSERT INTO payment(pay_type, rate, Staff_staff_id)
 values ('card', 12, 3);
 
+INSERT INTO payment(pay_type, rate, Staff_staff_id)
+values ('card', 13.25, 4);
+
+INSERT INTO payment(pay_type, rate, Staff_staff_id)
+values ('check', 12, 5);
+
+INSERT INTO payment(pay_type, rate, Staff_staff_id)
+values ('cash', 12.55, 6);
+
 INSERT INTO ClockIn(recordDate, in_time, Staff_staff_id)
 values ('2019-3-14', '08:15:30', 1);
 

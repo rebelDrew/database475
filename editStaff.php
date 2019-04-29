@@ -29,6 +29,7 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		if($stmt) {
 			$_SESSION["message"] = $_POST["FName"]." ".$_POST["LName"]." has been changed";
 			echo $_POST['FName']." ".$_POST['LName']." has been changed<br />";
+			
 		}
 		else {
 			$_SESSION["message"] = "Error! Could not change ".$_POST["FName"]." ".$_POST["LName"];

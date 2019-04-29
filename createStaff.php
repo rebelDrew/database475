@@ -65,7 +65,7 @@ if (($output = message()) !== null) {
     echo '<p>Department: <br><select name="name"></p>';
     echo '<option></option>';
     while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
-      echo "<option value = '".$row['depart_id']."'>".$row['name']."</option>";
+      echo "<option value = '".$row['depart_id']."' selected>".$row['name']."</option>";
     }
     echo'</select><p />';
 

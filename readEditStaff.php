@@ -20,10 +20,10 @@ if (isset($_GET["id"]) && $_GET["id"] !== "") {
   $stmt = $mysqli -> prepare($query);
   // $stmt -> execute([$_GET["depart_id"]]);
   $stmt -> execute([$_GET['id']]);
+  
   if ($stmt) {
       echo "<div class='row'>";
       echo "<center>";
-      echo "<h2>Current Staff by Department</h2>";
       echo "<table>";
       echo "  <thead>";
       echo "    <tr><th>Staff Name</th><th></th><th></th><th></th></tr>";
@@ -32,8 +32,8 @@ if (isset($_GET["id"]) && $_GET["id"] !== "") {
       while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
           echo "<tr>";
           //Output FirstName and LastName
-          echo "<td>".$row["FName"]."</td>";
-          echo "<td>".$row["LName"]."</td>";
+          echo "<td>".$row["FName"]." ".$row["LName"]."</td>";
+
 
           //Create an Edit and Delete link
           //Edit should direct to editPeople.php, sending PersonID in URL
@@ -44,10 +44,12 @@ if (isset($_GET["id"]) && $_GET["id"] !== "") {
       }
       echo "  </tbody>";
       echo "</table>";
-      echo "<br /><br /><a href='createDepartments.php'>Add a department</a> | <a href='createStaff.php'>Add a person</a>";
+      echo "<br /><br /> <a href='createStaff.php'>Add a person</a>";
       echo "</center>";
       echo "</div>";
+            echo "<br /><p>&laquo:<a href='readStaff.php'>Back to Main Page</a>";
   }
+
   else {
     $_SESSION["message"] = "Department could not be found!";
     redirect("readStaff.php");
