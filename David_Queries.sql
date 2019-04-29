@@ -1,5 +1,5 @@
 -- display the payment rates for staff who work at department 1
-select payment.Staff_staff_id, payment.rate
+select payment.Staff_staff_id as StaffID, payment.rate as PaymentRate
 from payment
 where payment.Staff_staff_id in
 (select Staff.staff_id from Staff where Staff.Departments_depart_id = 1);
