@@ -41,6 +41,9 @@ $mysqli -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		//echo "buddy";
 
+
+		//mnew
+
 		//Verify statement successfully executed - I assume that results are returned to variable $stmt
 		if ($stmt)  {
 			//Fetch associative array from executed prepared statement
