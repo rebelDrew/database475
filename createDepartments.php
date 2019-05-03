@@ -54,7 +54,12 @@ if (($output = message()) !== null) {
 		//Include <input> tags for each of the attributes in person:
 		//First Name, Last Name, Birthdate, Birth City, Birth State, Region
 		echo '<p>Department Name: <br><input type="text" name="departmentName"></p>';
-		echo '<p>Department Type: <br><input type="text" name="departmentType"></p>';
+		echo '<p>Department Type: <br><select name="departmentType">
+		<option value="outdoors">Outdoors</option>
+		<option value="acquatics">Acquatics</option>
+		<option value="fitness">Fitness</option>
+		<option value="advertisement">Advertisement</option>
+		</select></p>';
 		echo '<p>Department Email: <br><input type="text" name="departmentEmail"></p>';
 
 		//Finally, add a submit button - include the class 'tiny round button'
