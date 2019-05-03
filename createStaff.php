@@ -60,6 +60,12 @@ if (($output = message()) !== null) {
 		echo '<p>First Name: <br><input type="text" name="FName"></p>';
 		echo '<p>Last Name: <br><input type="text" name="LName"></p>';
 		echo '<p>Type: <br><input type="text" name="type"></p>';
+		echo '<option></option>';
+		echo '<option value="Trainer">Trainer</option>';
+		echo '<option value="Director">Director</option>';
+		echo '<option value="Supervisor">Supervisor</option>';
+		echo '<option value="Lifeguard">Lifeguard</option>';
+		echo '</select>';
 		echo '<p>Email: <br><input type="text" name="email"></p>';
 		echo '<p>Phone: <br><input type="text" name="phone"></p>';
     echo '<p>Department: <br><select name="name"></p>';
