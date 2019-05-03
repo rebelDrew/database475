@@ -59,7 +59,7 @@ if (($output = message()) !== null) {
 		//First Name, Last Name, Birthdate, Birth City, Birth State, Region
 		echo '<p>First Name: <br><input type="text" name="FName"></p>';
 		echo '<p>Last Name: <br><input type="text" name="LName"></p>';
-		echo '<p>Type: <br><input type="text" name="type"></p>';
+		echo '<p>Type: <br><select name="type"></p>';
 		echo '<option></option>';
 		echo '<option value="Trainer">Trainer</option>';
 		echo '<option value="Director">Director</option>';
